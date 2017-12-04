@@ -1,2 +1,3 @@
 # Boilerplate
-Bolierplate for Frontend project.
+
+Bolierplate for frontend project.
