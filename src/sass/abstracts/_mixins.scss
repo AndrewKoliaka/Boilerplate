@@ -1,0 +1,44 @@
+@mixin respond-to($media) {
+    $breakpoint: map-get($map: $breakpoints, $key: $media);
+
+    @if $breakpoint {
+        $query: if(
+            type-of($breakpoint) == 'string',
+            unquote($breakpoint),
+            inspect($breakpoint)
+        );
+    
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. '
+             + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+@mixin placeholder {
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin center-absolute($width, $height) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: $height;
+    width: $width;
+    margin: auto;
+}

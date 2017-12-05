@@ -1,0 +1,14 @@
+$breakpoints: (
+    'x-small': (max-width: 320px),
+    'small': (max-width: 480px - 1),
+    'medium': (max-width: 750px - 1),
+    'large': (max-width: 1000px - 1),
+    'x-large': (max-width: 1200px)
+);
+
+//Fonts
+
+// Colors
+
+// Effects
+$tr3s: ease all 0.3s;
